@@ -1,9 +1,5 @@
 local cheesyCSV = {}
 
-local csvString = [[name,age,location
-rei,16,factory
-uta,16,photo]]
-
 if csvString:sub(-1) ~= "\n" then
   csvString = csvString .. "\n"
 end
