@@ -1,5 +1,5 @@
 # CheesyCSV
-A lightweight and minimalist lua CSV Parser, not the best, but it gets the job done.
+A lightweight, simple and minimalist lua CSV Parser, not the best, but it gets the job done.
 
 Just simply require it and use it.
 
