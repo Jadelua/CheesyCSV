@@ -83,12 +83,14 @@ function cheesyCSV.parse(csvString)
         end
       else
         local currentValue = ""
+        table.insert(csvTable.Data, {})
+        local currentTable = csvTable.Data[newLineCount - 1]
               
         for l in lineString:gmatch(".") do
           if l ~= "\n" and l ~= "," then
             currentValue = currentValue .. l
           else
-            table.insert(csvTable.Data, cheesyCSV.parseValue(currentValue))
+            table.insert(currentTable, cheesyCSV.parseValue(currentValue))
             currentValue = ""
           end
         end
