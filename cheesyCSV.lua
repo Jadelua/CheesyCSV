@@ -1,9 +1,5 @@
 local cheesyCSV = {}
 
-if csvString:sub(-1) ~= "\n" then
-  csvString = csvString .. "\n"
-end
-
 local csvTable = {
   Headers = {},
   Data = {}
@@ -51,6 +47,10 @@ function cheesyCSV.cleanTable()
 end
 
 function cheesyCSV.parse(csvString)
+  if csvString:sub(-1) ~= "\n" then
+    csvString = csvString .. "\n"
+  end
+  
   if next(csvTable.Headers) ~= nil or next(csvTable.Data) ~= nil then
     cheesyCSV.cleanTable()
   end
